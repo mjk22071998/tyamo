@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:rounded_loading_button_plus/rounded_loading_button.dart';
 import 'package:tyamo/views/widgets/appbar.dart';
 import 'package:tyamo/views/widgets/auth/auth_heading.dart';
+import 'package:tyamo/views/widgets/textfield.dart';
 
 class LoginScreen extends StatelessWidget {
   final RoundedLoadingButtonController _btnController =
@@ -41,46 +42,20 @@ class LoginScreen extends StatelessWidget {
             const SizedBox(
               height: 40,
             ),
-            TextField(
-              textAlign: TextAlign.start,
+            const MyTextField(
+              label: "Email",
               obscureText: false,
-              textInputAction: TextInputAction.none,
-              autofocus: false,
-              keyboardType: TextInputType.emailAddress,
-              textAlignVertical: TextAlignVertical.center,
-              decoration: InputDecoration(
-                fillColor: Colors.blueGrey.shade100,
-                filled: true,
-                prefixIcon: const Icon(
-                  Icons.alternate_email,
-                ),
-                prefixIconColor: MaterialStateColor.resolveWith((states) =>
-                    states.contains(MaterialState.focused)
-                        ? Colors.teal
-                        : Colors.blueGrey.shade400),
-              ),
+              inputType: TextInputType.emailAddress,
+              icon: Icons.alternate_email,
             ),
             const SizedBox(
               height: 10,
             ),
-            TextField(
-              textAlign: TextAlign.start,
+            const MyTextField(
+              label: "Password",
               obscureText: true,
-              textInputAction: TextInputAction.none,
-              autofocus: false,
-              keyboardType: TextInputType.text,
-              textAlignVertical: TextAlignVertical.center,
-              decoration: InputDecoration(
-                fillColor: Colors.blueGrey.shade100,
-                filled: true,
-                prefixIcon: const Icon(
-                  Icons.password,
-                ),
-                prefixIconColor: MaterialStateColor.resolveWith((states) =>
-                    states.contains(MaterialState.focused)
-                        ? Colors.teal
-                        : Colors.blueGrey.shade400),
-              ),
+              inputType: TextInputType.text,
+              icon: Icons.password,
             ),
             const SizedBox(
               height: 20,
@@ -93,7 +68,7 @@ class LoginScreen extends StatelessWidget {
               },
               child: const Text("Login"),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Container(
@@ -102,6 +77,31 @@ class LoginScreen extends StatelessWidget {
                 child: const Text(
                   "Forgot Password?",
                   style: TextStyle(color: Colors.red),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 45,
+            ),
+            Container(
+              alignment: Alignment.center,
+              child: GestureDetector(
+                child: RichText(
+                  text: const TextSpan(children: [
+                    TextSpan(
+                      text: "Don't have account? ",
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                    ),
+                    TextSpan(
+                      text: "Sign Up",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.teal,
+                      ),
+                    ),
+                  ]),
                 ),
               ),
             ),
