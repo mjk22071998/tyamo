@@ -7,12 +7,12 @@ class MyTextField extends StatelessWidget {
   final String label;
 
   const MyTextField({
-    Key? key,
+    super.key,
     required this.label,
     required this.obscureText,
     required this.inputType,
     required this.icon,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

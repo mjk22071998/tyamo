@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:rounded_loading_button_plus/rounded_loading_button.dart';
 import 'package:tyamo/views/widgets/appbar.dart';
-import 'package:tyamo/views/widgets/auth/auth_heading.dart';
+import 'package:tyamo/views/widgets/heading.dart';
 import 'package:tyamo/views/widgets/textfield.dart';
 
 class Registration extends StatelessWidget {

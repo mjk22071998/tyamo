@@ -5,15 +5,15 @@ class Heading extends StatelessWidget {
   final String subText;
 
   const Heading({
-    Key? key,
+    super.key,
     required this.mainText,
     required this.subText,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
