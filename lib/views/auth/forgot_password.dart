@@ -63,10 +63,14 @@ class ForgotPassword extends StatelessWidget {
               ),
               RoundedLoadingButton(
                 controller: _btnController,
+                color: Colors.teal,
                 onPressed: () {
                   success();
                 },
-                child: const Text("SEND"),
+                child: const Text(
+                  "SEND",
+                  style: TextStyle(color: Colors.tealAccent),
+                ),
               )
             ],
           ),
