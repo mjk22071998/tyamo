@@ -17,7 +17,7 @@ class ProfileSetup extends StatefulWidget {
 class _ProfileSetupState extends State<ProfileSetup> {
   final RoundedLoadingButtonController _btnController =
       RoundedLoadingButtonController();
-  bool male = true;
+  bool isMale = true;
 
   void success() {
     Timer(const Duration(seconds: 3), () {
@@ -37,102 +37,107 @@ class _ProfileSetupState extends State<ProfileSetup> {
     return Scaffold(
       appBar: getAppBar(context: context),
       body: Center(
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 20,
-            ),
-            const Heading(
-              mainText: "Profile Setup",
-              subText: "Please enter your data",
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            CircularProfileAvatar(
-              "",
-              initialsText: const Text(
-                "+",
-                style: TextStyle(
-                  fontSize: 26,
-                  color: Colors.white,
-                ),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 20,
               ),
-              backgroundColor: Colors.teal,
-            ),
-            const SizedBox(
-              height: 40,
-            ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 26),
-              child: MyTextField(
-                label: "Full Name",
-                obscureText: false,
-                inputType: TextInputType.name,
-                icon: Icons.person,
+              const Heading(
+                mainText: "Profile Setup",
+                subText: "Please enter your data",
               ),
-            ),
-            const SizedBox(
-              height: 40,
-            ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 26),
-              child: MyTextField(
-                label: "Your username",
-                obscureText: false,
-                inputType: TextInputType.text,
-                icon: Icons.alternate_email,
+              const SizedBox(
+                height: 20,
               ),
-            ),
-            const SizedBox(
-              height: 100,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                FloatingActionButton(
-                  onPressed: () {
-                    setState(() {
-                      male = true;
-                    });
-                  },
-                  tooltip: "Male",
-                  backgroundColor: male ? Colors.teal : Colors.tealAccent,
-                  child: Icon(
-                    Icons.male,
-                    color: male ? Colors.tealAccent : Colors.teal,
+              CircularProfileAvatar(
+                "",
+                initialsText: const Text(
+                  "+",
+                  style: TextStyle(
+                    fontSize: 26,
+                    color: Colors.white,
                   ),
                 ),
-                FloatingActionButton(
-                  onPressed: () {
-                    setState(() {
-                      male = false;
-                    });
-                  },
-                  tooltip: "Female",
-                  backgroundColor: !male ? Colors.teal : Colors.tealAccent,
-                  child: Icon(
-                    Icons.female,
-                    color: !male ? Colors.tealAccent : Colors.teal,
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            RoundedLoadingButton(
-              controller: _btnController,
-              color: Colors.teal,
-              onPressed: () {
-                success();
-              },
-              child: const Text(
-                "NEXT",
-                style: TextStyle(color: Colors.tealAccent),
+                backgroundColor: Colors.teal,
               ),
-            )
-          ],
+              const SizedBox(
+                height: 40,
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 26),
+                child: MyTextField(
+                  label: "Full Name",
+                  obscureText: false,
+                  inputType: TextInputType.name,
+                  icon: Icons.person,
+                ),
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 26),
+                child: MyTextField(
+                  label: "Your username",
+                  obscureText: false,
+                  inputType: TextInputType.text,
+                  icon: Icons.alternate_email,
+                ),
+              ),
+              const SizedBox(
+                height: 100,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  FloatingActionButton(
+                    onPressed: () {
+                      setState(() {
+                        isMale = true;
+                      });
+                    },
+                    tooltip: "Male",
+                    backgroundColor: isMale ? Colors.teal : Colors.tealAccent,
+                    child: Icon(
+                      Icons.male,
+                      color: isMale ? Colors.tealAccent : Colors.teal,
+                    ),
+                  ),
+                  FloatingActionButton(
+                    onPressed: () {
+                      setState(() {
+                        isMale = false;
+                      });
+                    },
+                    tooltip: "Female",
+                    backgroundColor: !isMale ? Colors.teal : Colors.tealAccent,
+                    child: Icon(
+                      Icons.female,
+                      color: !isMale ? Colors.tealAccent : Colors.teal,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              RoundedLoadingButton(
+                controller: _btnController,
+                color: Colors.teal,
+                onPressed: () {
+                  success();
+                },
+                child: const Text(
+                  "NEXT",
+                  style: TextStyle(color: Colors.tealAccent),
+                ),
+              ),
+              const SizedBox(
+                height: 30,
+              )
+            ],
+          ),
         ),
       ),
     );
