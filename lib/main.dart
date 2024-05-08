@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tyamo/views/profile_setup/profile_setup.dart';
+import 'package:tyamo/views/invitation/invitation.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
         useMaterial3: true,
       ),
-      home: const ProfileSetup(),
+      home: const FriendInvitation(),
     );
   }
 }
