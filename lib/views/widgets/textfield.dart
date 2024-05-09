@@ -27,6 +27,7 @@ class MyTextField extends StatelessWidget {
         labelText: label,
         fillColor: Colors.blueGrey.shade100,
         filled: true,
+        border: InputBorder.none,
         prefixIcon: Icon(icon),
         prefixIconColor: MaterialStateColor.resolveWith((states) =>
             states.contains(MaterialState.focused)
